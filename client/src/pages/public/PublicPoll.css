@@ -1,0 +1,251 @@
+.public-poll-page {
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.poll-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 3rem !important;
+}
+
+.poll-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.poll-header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.poll-header-content .description {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.poll-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.badge.active { background: rgba(16, 185, 129, 0.1); color: var(--accent-color); }
+.badge.expired { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.badge.auth { background: rgba(59, 130, 246, 0.1); color: var(--secondary-color); }
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.question-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.required-star {
+  color: #ef4444;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.option-label:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--primary-color);
+}
+
+.option-label input {
+  position: absolute;
+  opacity: 0;
+}
+
+.option-text {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+
+.custom-radio {
+  position: absolute;
+  left: 1.5rem;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 2px solid var(--glass-border);
+  border-radius: 50%;
+}
+
+.option-label input:checked ~ .custom-radio {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.option-label input:checked ~ .custom-radio::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+.form-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+
+.submit-btn {
+  padding: 1rem 3rem !important;
+  font-size: 1.1rem;
+}
+
+.expiry-note {
+  margin-top: 1rem;
+  color: #ef4444;
+  font-size: 0.9rem;
+}
+
+.auth-required {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.success-card, .error-card {
+  text-align: center;
+  padding: 5rem 3rem !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 100px auto;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .poll-header { flex-direction: column; }
+  .poll-container { padding: 1.5rem !important; }
+}
+
+.results-published-banner {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.results-published-banner span {
+  flex: 1;
+  font-weight: 500;
+}
+
+.results-published-banner .text-link {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.results-published-banner .text-link:hover {
+  color: var(--secondary-color);
+}
+
+.option-wrapper.results-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option-wrapper.results-view .option-label {
+  cursor: default;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.option-wrapper.results-view .option-text {
+  margin-left: 0;
+}
+
+.result-percentage {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.option-result-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  position: relative;
+  overflow: visible;
+  margin-top: -0.25rem;
+}
+
+.option-result-bar .bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.vote-count {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}

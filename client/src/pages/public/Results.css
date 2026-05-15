@@ -1,0 +1,120 @@
+.results-page {
+  padding: 100px 0;
+  min-height: 100vh;
+}
+
+.results-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem !important;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.results-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-color);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.results-header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.results-header-content .summary {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.results-header-content .summary strong {
+  color: white;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.result-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.result-chart-wrapper {
+  margin-bottom: 2rem;
+}
+
+.result-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result-opt-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.opt-bar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opt-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.opt-val {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.opt-progress {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.opt-progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.results-footer {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+
+.results-footer p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .results-container { padding: 2rem !important; }
+  .results-header-content h1 { font-size: 1.75rem; }
+}

@@ -1,0 +1,145 @@
+.analytics-container {
+  padding: 1rem 0;
+}
+
+.analytics-summary {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem !important;
+  min-width: 250px;
+}
+
+.summary-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-info .label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.summary-info .value {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.chart-card {
+  padding: 2rem !important;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.chart-header h3 {
+  font-size: 1.1rem;
+  max-width: 80%;
+}
+
+.chart-actions {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+
+.chart-actions .active {
+  color: var(--primary-color);
+}
+
+.chart-wrapper {
+  margin-bottom: 2rem;
+}
+
+.options-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.opt-stat-item {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.opt-info {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.opt-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.opt-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.progress-bg {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.opt-percentage {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.secondary-button.published {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-color);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.secondary-button.published:hover {
+  background: rgba(16, 185, 129, 0.2);
+}
