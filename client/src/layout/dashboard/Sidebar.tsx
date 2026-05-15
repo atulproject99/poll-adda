@@ -39,7 +39,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, setIsCollapsed }) => {
     { name: 'My Polls', path: '/dashboard/polls', icon: ListTodo },
     { name: 'Analytics', path: '/dashboard/analytics', icon: BarChart3 },
     { name: 'Published', path: '/dashboard/published', icon: CheckCircle2 },
-    // { name: 'Settings', path: '/dashboard/settings', icon: Settings },
   ];
 
   return (

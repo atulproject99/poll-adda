@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import './AuthModal.css';
 import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
 
 const loginSchema = z.object({
@@ -43,6 +44,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { login: authLogin } = useAuth();
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<AuthFormData>({
     resolver: zodResolver(isLogin ? loginSchema : registerSchema)
@@ -70,6 +72,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
       authLogin(accessToken, user);
       onClose();
       resetState();
+      navigate('/dashboard');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Something went wrong');
     } finally {
@@ -94,6 +97,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
       authLogin(accessToken, user);
       onClose();
       resetState();
+      navigate('/dashboard');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Invalid verification code');
     } finally {

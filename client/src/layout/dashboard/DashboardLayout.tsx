@@ -18,7 +18,6 @@ const DashboardLayout: React.FC = () => {
     if (path === '/dashboard/polls') return 'My Polls';
     if (path.includes('/dashboard/analytics')) return 'Analytics';
     if (path === '/dashboard/published') return 'Published Polls';
-    if (path === '/dashboard/settings') return 'Settings';
     return 'Dashboard';
   };
 

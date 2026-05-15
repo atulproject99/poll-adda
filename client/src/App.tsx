@@ -16,7 +16,6 @@ import AnalyticsList from './pages/dashboard/AnalyticsList'
 import PublicPoll from './pages/public/PublicPoll'
 import Analytics from './pages/dashboard/Analytics'
 import Results from './pages/public/Results'
-import Settings from './pages/dashboard/Settings'
 import { Toaster } from 'sonner'
 
 function LandingPage() {
@@ -75,7 +74,6 @@ function App() {
           <Route path="analytics" element={<AnalyticsList />} />
           <Route path="analytics/:id" element={<Analytics />} />
           <Route path="published" element={<PublishedPolls />} />
-          <Route path="settings" element={<Settings />} />
         </Route>
 
         <Route path="/poll/:id" element={<PublicPoll />} />
