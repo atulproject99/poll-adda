@@ -27,6 +27,13 @@ interface AuthModalProps {
   onClose: () => void;
 }
 
+type AuthFormData = {
+  name?: string;
+  email: string;
+  password: string;
+  confirmPassword?: string;
+};
+
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
@@ -34,7 +41,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   const [error, setError] = useState<string | null>(null);
   const { login: authLogin } = useAuth();
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<AuthFormData>({
     resolver: zodResolver(isLogin ? loginSchema : registerSchema)
   });
 

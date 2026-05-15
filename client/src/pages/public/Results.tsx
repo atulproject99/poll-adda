@@ -5,12 +5,11 @@ import {
   Bar, 
   XAxis, 
   YAxis, 
-  CartesianGrid, 
   Tooltip, 
   ResponsiveContainer, 
   Cell
 } from 'recharts';
-import { CheckCircle2, Users, AlertCircle, Share2, Loader2 } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Share2, Loader2 } from 'lucide-react';
 import './Results.css';
 import api from '../../api/axios';
 
@@ -85,7 +84,7 @@ const Results: React.FC = () => {
                       contentStyle={{ backgroundColor: 'var(--surface-color)', border: 'none', borderRadius: '8px' }}
                     />
                     <Bar dataKey="count" radius={[0, 4, 4, 0]}>
-                      {q.options.map((entry: any, index: number) => (
+                      {q.options.map((_: any, index: number) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                     </Bar>

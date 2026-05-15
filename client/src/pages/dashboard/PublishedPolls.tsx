@@ -2,15 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { 
   Plus, 
   Search, 
-  Filter, 
   MoreVertical, 
   Eye, 
   BarChart3, 
-  Trash2, 
   Share2, 
   Clock, 
   CheckCircle2, 
-  AlertCircle 
 } from 'lucide-react';
 import '../dashboard/MyPolls.css'; // Reuse MyPolls CSS
 import api from '../../api/axios';

@@ -8,10 +8,7 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer, 
-  PieChart, 
-  Pie, 
-  Cell,
-  Legend
+  Cell
 } from 'recharts';
 import { Users, BarChart3, PieChart as PieIcon, RefreshCcw, Loader2, Globe, Lock } from 'lucide-react';
 import { toast } from 'sonner';
@@ -160,7 +157,7 @@ const Analytics: React.FC = () => {
                       filter: 'drop-shadow(0 0 8px var(--primary-glow))'
                     }}
                   >
-                    {q.options.map((entry: any, index: number) => (
+                    {q.options.map((_: any, index: number) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Bar>

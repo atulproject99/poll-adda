@@ -6,7 +6,6 @@ import {
   Clock, 
   Plus, 
   Eye,
-  Trash2,
   Share2,
   Loader2
 } from 'lucide-react';

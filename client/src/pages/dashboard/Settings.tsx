@@ -4,7 +4,6 @@ import {
   Lock, 
   Bell, 
   Globe, 
-  Shield, 
   LogOut,
   Camera
 } from 'lucide-react';

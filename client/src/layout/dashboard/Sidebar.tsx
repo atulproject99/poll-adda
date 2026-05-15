@@ -6,7 +6,6 @@ import {
   ListTodo, 
   BarChart3, 
   CheckCircle2, 
-  Settings, 
   LogOut,
   ChevronLeft,
   ChevronRight

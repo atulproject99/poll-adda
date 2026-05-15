@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const { confirm } = useModal();
 
   const handleLogout = () => {

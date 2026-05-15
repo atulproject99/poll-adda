@@ -22,9 +22,6 @@ const DashboardLayout: React.FC = () => {
     return 'Dashboard';
   };
 
-  const handleScroll = () => {
-    // Scroll listener removed for simplicity
-  };
 
   if (isLoading) return <div className="loading-screen">Loading...</div>;
   if (!isAuthenticated) return <Navigate to="/" replace />;
