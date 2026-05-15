@@ -19,15 +19,18 @@ export const registerUser = async ({ name, email, password, }) => {
     const hashedToken = generateHash();
     const updatedUser = await User.findByIdAndUpdate(addedUser._id, {
         verified: false,
-        verifiedToken: hashedToken,
+        verifyToken: hashedToken,
     });
-    addedUser.verifiedToken = hashedToken;
-    addedUser.verified = false;
-    return addedUser;
+    return {
+        verified: false,
+        verifyToken: hashedToken,
+        email: addedUser.email,
+        user: addedUser
+    };
 };
 /// Verify Email
 export const verifyEmail = async ({ email, verifyToken, code, }) => {
-    const user = await User.findOne({ email }).select("+verifiedToken +verified +refreshToken");
+    const user = await User.findOne({ email }).select("+verifyToken +verified +refreshToken");
     if (!user) {
         throw ApiError.badRequest("User not found");
     }
@@ -35,11 +38,11 @@ export const verifyEmail = async ({ email, verifyToken, code, }) => {
     if (existCode !== code) {
         throw ApiError.badRequest("Invalid code");
     }
-    if (user.verifiedToken !== verifyToken) {
+    if (user.verifyToken !== verifyToken) {
         throw ApiError.badRequest("Invalid verification token");
     }
     user.verified = true;
-    user.verifiedToken = null;
+    user.verifyToken = null;
     const accessToken = generateAccessToken({
         userId: user._id.toString(),
         email: user.email,
@@ -59,7 +62,7 @@ export const verifyEmail = async ({ email, verifyToken, code, }) => {
 };
 /// Login user
 export const loginUser = async ({ email, password }) => {
-    const user = await User.findOne({ email }).select("+password +verified +verifiedToken +refreshToken");
+    const user = await User.findOne({ email }).select("+password +verified +verifyToken +refreshToken");
     if (!user) {
         throw ApiError.badRequest("Invalid email or password");
     }
@@ -73,7 +76,8 @@ export const loginUser = async ({ email, password }) => {
     if (!user.verified) {
         return {
             verified: false,
-            verifyToken: user.verifiedToken,
+            verifyToken: user.verifyToken,
+            email: user.email,
             user: user,
         };
     }

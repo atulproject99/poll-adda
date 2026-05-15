@@ -82,7 +82,7 @@ export declare const User: mongoose.Model<UserInfo, {}, {}, {
     }, "id"> & {
         id: string;
     }>;
-    verifiedToken?: mongoose.SchemaDefinitionProperty<string | null | undefined, UserInfo, mongoose.Document<unknown, {}, UserInfo, {
+    verifyToken?: mongoose.SchemaDefinitionProperty<string | null | undefined, UserInfo, mongoose.Document<unknown, {}, UserInfo, {
         id: string;
     }, mongoose.DefaultSchemaOptions> & Omit<UserInfo & {
         _id: mongoose.Types.ObjectId;

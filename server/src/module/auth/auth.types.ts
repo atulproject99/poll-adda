@@ -21,6 +21,6 @@ export interface UserInfo {
   googleId?: string | null;
   avatar?: string | null;
   refreshToken?: string | null;
-  verifiedToken?: string | null;
+  verifyToken?: string | null;
   verified?: boolean | null;
 }

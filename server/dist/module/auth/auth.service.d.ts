@@ -16,6 +16,7 @@ export declare const verifyEmail: ({ email, verifyToken, code, }: VerifyEmailReq
 export declare const loginUser: ({ email, password }: LoginRequestType) => Promise<{
     verified: boolean;
     verifyToken: string | null | undefined;
+    email: string;
     user: import("mongoose").Document<unknown, {}, UserInfo, {
         id: string;
     }, import("mongoose").DefaultSchemaOptions> & Omit<UserInfo & {
@@ -41,6 +42,7 @@ export declare const loginUser: ({ email, password }: LoginRequestType) => Promi
     };
     verified?: never;
     verifyToken?: never;
+    email?: never;
 }>;
 export declare const logoutUser: (userId: string) => Promise<null>;
 export declare const me: (userId: string) => Promise<(import("mongoose").Document<unknown, {}, UserInfo, {
